@@ -2,7 +2,7 @@
 % Arquivo para entrada de dados para a parte pré textual
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
-% Basta digitar as informações indicidas, no formato 
+% Basta digitar as informações indicadas, no formato 
 % apresentado.
 %
 %%%%%%%
@@ -19,7 +19,7 @@
 % arquivo com dados bibliográficos
 % instituição
 % setor
-% programa de pós gradução
+% programa de pós graduação
 % curso
 % preambulo
 % data defesa
@@ -28,7 +28,7 @@
 % assinaturas - termo de aprovação
 % resumos & palavras chave
 % agradecimentos
-% dedicatoria
+% dedicatória
 % epígrafe
 
 
@@ -45,43 +45,43 @@
  \providecommand{\terCapa}{Sim}
  \providecommand{\terFolhaRosto}{Sim}
  \providecommand{\terTermoAprovacao}{Sim}
- \providecommand{\terDedicatoria}{Nao}
+ \providecommand{\terDedicatoria}{Sim}
  \providecommand{\terFichaCatalografica}{Nao}
- \providecommand{\terEpigrafe}{Nao}
- \providecommand{\terAgradecimentos}{Nao}
+ \providecommand{\terEpigrafe}{Sim}
+ \providecommand{\terAgradecimentos}{Sim}
  \providecommand{\terErrata}{Nao}
  \providecommand{\terListaFiguras}{Sim}
  \providecommand{\terListaQuadros}{Sim}
  \providecommand{\terListaTabelas}{Sim}
- \providecommand{\terSiglasAbrev}{Nao}
- \providecommand{\terResumos}{Nao}
+ \providecommand{\terSiglasAbrev}{Sim}
+ \providecommand{\terResumos}{Sim}
  \providecommand{\terSumario}{Sim}
  \providecommand{\terAnexo}{Nao}
  \providecommand{\terApendice}{Nao}
  \providecommand{\terIndiceR}{Nao}
 %----------------------------------------------------------------------------- 
 
-\titulo{Modelo de trabalho acadêmico com \abnTeX}
-\autor{Erika Angela}
+\titulo{Problema inverso aplicado à modelagem e linearização de transmissores sem fio}
+\autor{Caio Phillipe Mizerkowski}
 \local{Curitiba}
-\data{2020} %Apenas ano 4 dígitos
+\data{2022} %Apenas ano 4 dígitos
 
 % Orientador ou Orientadora
-\orientador{}
+\orientador{Prof. Dr. Eduardo Gonçalves de Lima}
 %Prof Emílio Eiji Kavamura, MSc}
-\orientadora{
-Prof\textordfeminine~Grace Kelly, DSc}
+%\orientadora{}
+%Prof\textordfeminine~Grace Kelly, DSc}
 % Pode haver apenas uma orientadora ou um orientador
 % Se houver os dois prevalece o feminino.
 
 % Em termos de coorientação, podem haver até quatro neste modelo
 % Sendo 2 mulhere e 2 homens.
 % Coorientador ou Coorientadora
-\coorientador{}%Prof Morgan Freeman, DSc}
-\coorientadora{Prof\textordfeminine~Audrey Hepburn, DEng}
+%\coorientador{}%Prof Morgan Freeman, DSc}
+%\coorientadora{Prof\textordfeminine~Audrey Hepburn, DEng}
 
 % Segundo Coorientador ou Segunda Coorientadora
-\scoorientador{}
+%\scoorientador{}
 %Prof Jack Nicholson, DEng}
 \scoorientadora{}
 %Prof\textordfeminine~Ingrid Bergman, DEng}
@@ -89,19 +89,15 @@ Prof\textordfeminine~Grace Kelly, DSc}
 \addbibresource{referencias.bib}
 
 % ----------------------------------------------------------
-\instituicao{%
-Universidade Federal do Paraná}
+\instituicao{Universidade Federal do Paraná}
 
-\def \ImprimirSetor{}%
-%Setor de Tecnologia}
+\def \ImprimirSetor{}%Setor de Tecnologia}
 
-\def \ImprimirProgramaPos{}%Programa de Pós Graduação em Engenharia de Construção Civil}
+\def \ImprimirProgramaPos{}%Departamento de Engenharia Elétrica}
 
-\def \ImprimirCurso{}%
-%Curso de Engenharia Civil}
+\def \ImprimirCurso{}%Curso de Engenharia Elétrica}
 
-\preambulo{
-Trabalho apresentado como requisito parcial para a obtenção do título de Mestre em Ciências pelo Programa de Pós Graduação em Engenharia de Construção Civil do  Setor de Tecnologia  da Universidade Federal do Paraná}
+\preambulo{Trabalho de Conclusão de Curso apresentado ao Curso de Graduação em Engenharia Elétrica, Departamento de Engenharia Elétrica, Setor de Tecnologia, Universidade Federal do Paraná, como requisito à obtenção do título de Bacharel em Engenharia Elétrica}
 %do grau de Bacharel em Expressão Gráfica no curso de Expressão Gráfica, Setor de Exatas da Universidade Federal do Paraná}
 
 %----------------------------------------------------------------------------- 
@@ -110,10 +106,9 @@ Trabalho apresentado como requisito parcial para a obtenção do título de Mest
 %Programa de P\'os Gradua\c{c}\~ao em Engenharia da Constru\c{c}\~ao Civil}
 
 \newcommand{\imprimirDataDefesa}{
-09 de Dezembro de 2018}
+21 de Setembro de 2022}
 
-\newcommand{\imprimircdu}{
-02:141:005.7}
+\newcommand{\imprimircdu}{}
 
 % ----------------------------------------------------------
 \newcommand{\imprimirerrata}{
@@ -156,12 +151,9 @@ Zootecnia, Universidade de São Paulo, São Paulo, 2011.
 \newcommand{\AssinaAprovacao}{
 
 \assinatura{%\textbf
-   {Professora} \\ UFPR}
+   {Professor} \\ Prof. Dr. Marcelo de Souza}
    \assinatura{%\textbf
-   {Professora} \\ ENSEADE}
-   \assinatura{%\textbf
-   {Professora} \\ TIT}
-   %\assinatura{%\textbf{Professor} \\ Convidado 4}
+   {Professor} \\ Prof. Dr. Bernardo Rego Barros de Almeida Leite}
       
    \begin{center}
     \vspace*{0.5cm}
@@ -180,20 +172,19 @@ Zootecnia, Universidade de São Paulo, São Paulo, 2011.
 
 % ----------------------------------------------------------
 \newcommand{\EpigrafeTexto}{%\color{blue}
-\textit{``Não vos amoldeis às estruturas deste mundo, \\
-		mas transformai-vos pela renovação da mente, \\
-		a fim de distinguir qual é a vontade de Deus: \\
-		o que é bom, o que Lhe é agradável, o que é perfeito.\\
-		(Bíblia Sagrada, Romanos 12, 2)}
+\textit{"Qualquer árvore que queira tocar os céus\\
+precisa ter raízes tão profundas\\
+a ponto de tocar os infernos."\\
+		Carl Gustav Jung}
 }
 
 % ----------------------------------------------------------
 \newcommand{\ResumoTexto}{%\color{blue}
-O resumo deve ressaltar o  objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão destes itens dependem do tipo de resumo (informativo ou indicativo) e do tratamento que cada item recebe no documento original. O resumo deve ser precedido da referência do documento, com exceção do resumo inserido no próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do  resumo, antecedidas da expressão Palavras-chave:, separadas entre si por ponto e finalizadas também por ponto.Ter no máximo 500 palavras!!! As palavras chave são separadas por ponto e vírgula.
+Dividido em duas partes, esse trabalho tem por objetivo explorar o problema inverso (PI) e suas aplicações voltadas para a modelagem, a validação e a linearização de amplificadores de potência (PAs), utilizando-se a modelagem computacional através de redes neurais artificiais como método para a reprodução do comportamento destes. Na primeira parte deste trabalho é analisado o problema inverso aplicado aos modelos de PAs, partindo-se do pressuposto de que construção de uma função inversa ao PA possui uma complexidade que pode ser relacionada ao quão não linear é sua curva e foi iniciada a construção de um arcabouço técnico de análises e um estudo de caso destas análises. O parâmetro analisado na primeira parte deste trabalho foi a distribuição dos resultados da resolução do problema inverso para o modelo direto do PA entre três categorias que surgiram naturalmente durante as análises exploratórias: convergência para o valor esperado, convergência para um valor não esperado e não-convergência. A segunda parte deste trabalho terá como foco o uso do problema inverso para a validação da pré-inversa de modelos de PAs, visto que o treinamento em cascata só garante a validação da pós-inversa do modelo e se torna necessário uma validação física desta em seu papel como pré-inversa.
 } 
 
 \newcommand{\PalavraschaveTexto}{%\color{blue}
-latex; abntex; editoração de texto.}
+Problema inverso. Modelagem computacional. Rede neural artificial. Amplificador de potência. Linearização.}
 
 % ----------------------------------------------------------
 \newcommand{\AbstractTexto}{%\color{blue}
@@ -228,21 +219,22 @@ latex. abntex. text editoration.
 
 % ----------------------------------------------------------
 \newcommand{\AgradecimentosTexto}{%\color{blue}
-Os agradecimentos principais são direcionados à Gerald Weber, Miguel Frasson, Leslie H. Watter, Bruno Parente Lima, Flávio de  Vasconcellos Corrêa, Otavio Real Salvador, Renato Machnievscz\footnote{Os nomes dos integrantes do primeiro
-projeto abn\TeX\ foram extraídos de \url{http://codigolivre.org.br/projects/abntex/}} e todos aqueles que contribuíram para que a produção de trabalhos acadêmicos conforme as normas ABNT com \LaTeX\ fosse possível.
+Agradeço antes de tudo a minha família, em especial ao meu tio Reinaldo e a sua esposa Simone, que me apoiaram deste do começo dessa jornada de formas incomensuráveis.
 
-Agradecimentos especiais são direcionados ao Centro de Pesquisa em Arquitetura da Informação\footnote{\url{http://www.cpai.unb.br/}} da Universidade de Brasília (CPAI), ao grupo de usuários
-\emph{latex-br}\footnote{\url{http://groups.google.com/group/latex-br}} e aos novos voluntários do grupo \emph{\abnTeX}\footnote{\url{http://groups.google.com/group/abntex2} e
-\url{http://abntex2.googlecode.com/}}~que contribuíram e que ainda
-contribuirão para a evolução do \abnTeX.
+Ao meu orientador, o Prof. Dr. Eduardo Gonçalves de Lima, que me orientou durante três anos de iniciação científica, na minha jornada dentro do curso de engenharia elétrica e que continua a me orientar no desenvolvimento deste trabalho.
 
-Os agradecimentos principais são direcionados à Gerald Weber, Miguel Frasson, Leslie H. Watter, Bruno Parente Lima, Flávio de Vasconcellos Corrêa, Otavio Real Salvador, Renato Machnievscz\footnote{Os nomes dos integrantes do primeiro
-projeto abn\TeX\ foram extraídos de \url{http://codigolivre.org.br/projects/abntex/}} e todos aqueles que contribuíram para que a produção de trabalhos acadêmicos conforme as normas ABNT com \LaTeX\ fosse possível.
+Aos meus amigos e colegas de faculdade, pelo tempo compartilhado e apoio nas mais diversas atividades.
+
+Aos professores que tive a sorte de compartilhar o espaço dentro da universidade e que muito me ensinaram durante a minha passagem por esse curso.
+
+Ao GICS pelas oportunidades de pesquisa na iniciação científica cujo resultado final é esse trabalho de conclusão de curso.
+
+Ao Departamento de Engenharia Elétrica e a Universidade Federal do Paraná, cuja estrutura possibilitou do inicio até o fim o meu aprendizado.
+
 }
 
 % ----------------------------------------------------------
 \newcommand{\DedicatoriaTexto}{%\color{blue}
-\textit{ Este trabalho é dedicado às crianças adultas que,\\
-   quando pequenas, sonharam em se tornar cientistas.}
+\textit{Esse trabalho é dedicado ao meu avô Thadeu (in memorian), o qual foi e continua sendo meu grande exemplo.}
 	}
 
