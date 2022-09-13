@@ -9,7 +9,7 @@ Alimentados por uma potência maior do que a presente nos sinais de entrada, o a
 A figura \autoref{fig:model-pa-p} mostra um modelo do amplificador de potência com a potência de entrada, a potência de alimentação, a potência dissipada e a potência de saída representadas.
 
 \imagem{Modelo de PA com as potências}{
-\resizebox{0.8\textwidth}{!}{
+\resizebox{0.6\textwidth}{!}{
 \begin{tikzpicture}[thick]      
       \draw  (-2.5,1.7)  -- (-2.5,-0.7) -- (0,0.5) -- cycle;
       \draw[->] (-3.2,0.5) -- (-2.5,0.5);
@@ -56,15 +56,19 @@ A construção da função inversa do PA através de técnicas de caixa preta, p
 \section{Bijetividade e função inversa} \label{sec:fundteo-bije}
 Um modo de se avaliar o quão não-linear é uma modelo de PA é através do conceito de bijetividade e da separação do modelo em suas regiões monotônica e não-monotônica.
 
-Sendo a bijetividade uma característica necessária para a existência de uma inversa única, seja esta analítica ou numérica \cite{weisstein}. Visto que a existência de uma função inversa $f^{-1}$, tal qual a presente na equação \ref{eq:equacao_generica}, necessita que para cada elemento do contradomínio de $f$ exista um e somente um elemento no domínio de $f$.
+Sendo a bijetividade uma característica necessária para a existência de uma inversa única, seja esta analítica ou numérica \cite{weisstein}. Visto que a existência de uma função inversa $f^{-1}$, tal qual a presente na equação \ref{eq:equacao_generica} ou na figura (), necessita que para cada elemento do contradomínio de $f$ exista um e somente um elemento no domínio de $f$.
 
 \begin{align}
 f(f^{-1}(x)) = x
 \label{eq:equacao_generica}
 \end{align}
 
-Essa relação pode ser facilmente observada através da \autoref{fig:bijetividade}, sendo o primeiro conjunto o domínio da função $f$ e o segundo conjunto o contradomínio desta, enquanto para a função $f^{-1}$ essa relação se inverte.
+\imagem{Função genérica e sua inversa}{
+\label{fig:fun_generica}
+\includegraphics[width = 0.8\textwidth]{fig/Inversa-eps-converted-to.pdf}
+}{O autor}{fig:fun_generica}{}{Função $f(x)$, sua inversa $f^{-1}(x)$ e a composição $f^{-1}(f(x))$ representadas de forma gráfica.}
 
+Essa relação pode ser facilmente observada através da \autoref{fig:bijetividade}, sendo o primeiro conjunto o domínio da função $f$ e o segundo conjunto o contradomínio desta, enquanto para a função $f^{-1}$ essa relação se inverte.
 \imagem{Função bijetiva e sua inversa}{
 \resizebox{0.5\textwidth}{!}{
 \label{fig:bijetividade}
