@@ -655,6 +655,65 @@
 	}
 }
 
+\newcommand{\imagemH}[6]{
+	{
+	\centering\footnotesize
+  	    \sbox{\myboxa}{#2}
+		\settowidth{\myboxlena}{\usebox{\myboxa}}
+		\noindent
+		\begin{figure}[H]
+			\centering
+			\caption{\uppercase{#1}}
+			#2
+			\label{fig:#4}
+			
+			%ajustado p/ a largura da imagem
+			\begin{minipage}{\myboxlena} \footnotesize
+				\vspace{2mm}\centering
+				%\begin{flushleft}
+				\par FONTE:~#3
+				\ifthenelse{\equal{#5}{}}{}
+				{ \par\hangindent=14mm NOTA: #5 }
+				
+				\ifthenelse{\equal{#6}{}}{}
+				{ \par\hangindent=14mm LEGENDA: #6 }
+				%\end{flushleft}
+			\end{minipage}
+		\end{figure}
+	}
+}
+
+
+\newcommand{\imagemS}[6]{
+	{
+	\centering\footnotesize
+  	    \sbox{\myboxa}{#2}
+		\settowidth{\myboxlena}{\usebox{\myboxa}}
+		\noindent
+		\begin{sidewaysfigure}
+		%\begin{figure}[p]
+			\centering
+			\caption{\uppercase{#1}}
+			#2
+			\label{fig:#4}
+			
+			%ajustado p/ a largura da imagem
+			\begin{minipage}{\myboxlena} \footnotesize
+				\vspace{2mm}\centering
+				%\begin{flushleft}
+				\par FONTE:~#3
+				\ifthenelse{\equal{#5}{}}{}
+				{ \par\hangindent=14mm NOTA: #5 }
+				
+				\ifthenelse{\equal{#6}{}}{}
+				{ \par\hangindent=14mm LEGENDA: #6 }
+				%\end{flushleft}
+			\end{minipage}
+		%\end{figure}
+		\end{sidewaysfigure}
+	}
+}
+
 % simplificação para colocar tabelas
 % ----------------------------------------------------------
 %   Parametros

@@ -8,7 +8,7 @@ Alimentados por uma potência maior do que a presente nos sinais de entrada, o a
 
 A figura \autoref{fig:model-pa-p} mostra um modelo do amplificador de potência com a potência de entrada, a potência de alimentação, a potência dissipada e a potência de saída representadas.
 
-\imagem{Modelo de PA com as potências}{
+\imagem{Modelo simplificado de PA com as potências}{
 \resizebox{0.6\textwidth}{!}{
 \begin{tikzpicture}[thick]      
       \draw  (-2.5,1.7)  -- (-2.5,-0.7) -- (0,0.5) -- cycle;
@@ -35,7 +35,7 @@ A eficiência \criarsimbolo{$\eta$}{Eficiência}\label{item:efi} pode ser caract
 \section{Linearização do PA} \label{sec:fundteo-line}
 A linearização é o processo necessário para compensar as não linearidades presentes, ocorrendo através da passagem dos sinais a serem transmitidos por uma função que possui o comportamento inverso ao comportamento do PA analisado \cite{kenington_high-linearity_2000}. Na \autoref{fig:linearizacao} está presente um exemplo simplificado desse processo, no qual o sinal S passa por um pré-distorcedor digital (DPD) que possui o perfil inverso ao perfil do PA, desconsiderando-se o ganho K, e após este processo o sinal resultante é distorcido e amplificado pelo PA. Como o sinal DPD(S) foi anteriormente pré-distorcido, temos como saída dos blocos em cascata um sinal que sofreu somente uma amplificação.
 
-\imagem{Processo de linearização com DPD}{
+\imagem{Cascata DPD-PA}{
 \resizebox{0.8\textwidth}{!}{
 \label{fig:linearizacao}
 \begin{tikzpicture}[->,thick]
@@ -49,7 +49,7 @@ A linearização é o processo necessário para compensar as não linearidades p
         \node[circle, fill,minimum size=1.5mm,inner sep=0pt,outer sep=0pt] at (-3.5,0.5) {};
 \end{tikzpicture}
 }
-}{O autor}{fig:linearizacao}{}{Processo de linearização do sinal S com DPD e PA com ganho K.}
+}{O autor}{fig:linearizacao}{}{Cascata DPD-PA para o processo de amplificação do sinal S por um ganho K, mantendo-se a linearidade de S.}
 
 A construção da função inversa do PA através de técnicas de caixa preta, por possuir um perfil inverso ao mesmo, possui uma complexidade, tanto no processo de treinamento como na quantidade de coeficientes do modelo, que pode ser relacionada ao quão não-linear é a curva do PA estudado. O que se traduz em um maior esforço nas etapas de modelagem e de treinamento dos modelos inversos para se obter resultados com igual grau de confiança.
 
@@ -69,9 +69,11 @@ f(f^{-1}(x)) = x
 }{O autor}{fig:fun_generica}{}{Função $f(x)$, sua inversa $f^{-1}(x)$ e a composição $f^{-1}(f(x))$ representadas de forma gráfica.}
 
 Essa relação pode ser facilmente observada através da \autoref{fig:bijetividade}, sendo o primeiro conjunto o domínio da função $f$ e o segundo conjunto o contradomínio desta, enquanto para a função $f^{-1}$ essa relação se inverte.
+
 \imagem{Função bijetiva e sua inversa}{
-\resizebox{0.5\textwidth}{!}{
+\resizebox{0.8\textwidth}{!}{
 \label{fig:bijetividade}
+
 \begin{tikzpicture}[->,thick]
  \node (a) at (0,0.5) {$A$};
  \node (b) at (0,0) {$B$};
@@ -88,30 +90,30 @@ Essa relação pode ser facilmente observada através da \autoref{fig:bijetivida
 \draw  (a) edge (d);
 \node at (1,1.5) {$f$};
 
-\node (a) at (0,-2.75) {$X$};
-\node (b) at (0,-3.25) {$Y$};
-\node (c) at (0,-3.75) {$Z$};
+\node (a) at (4,0.5) {$X$};
+\node (b) at (4,0) {$Y$};
+\node (c) at (4,-0.5) {$Z$};
 \node[draw, ellipse, minimum height=2.5cm,minimum width=1.5cm, fit=(a) (b) (c)] {};
   
-\node (d) at (2,-2.75) {$A$};
-\node (e) at (2,-3.25) {$B$};
-\node (f) at (2,-3.75) {$C$};
+\node (d) at (6,0.5) {$A$};
+\node (e) at (6,0) {$B$};
+\node (f) at (6,-0.5) {$C$};
 \node[draw, ellipse, minimum height=2.5cm,minimum width=1.5cm, fit=(d) (e) (f)] {};
 
 \draw  (c) edge (f);
 \draw  (b) edge (e);
 \draw  (a) edge (d);
-\node at (1,-1.75) {$f^{-1}$};
+\node at (5,1.5) {$f^{-1}$};
 
 \end{tikzpicture}
 }
-}{O autor}{fig:bijetividade}{}{Função bijetiva $f$ e sua inversa $f^{-1}$.}
+}{O autor}{fig:bijetividade}{}{Função bijetiva $f(x)$, sua inversa $f^{-1}(x)$ e a composição $f^{-1}(f(x))$ representadas através de conjuntos.}
 
 A função do PA, portanto, desta perspectiva, não é bijetiva, pois apresenta uma região não-monotônica na qual para diferentes elementos no contradomínio existem dois ou mais elementos no domínio desta, o que pode ser visto na \autoref{fig:perfil_pa}. Nesta figura também é possível observar que a maior parte do modelo do PA é monotônico e crescente, ou seja, desconsiderando-se os efeitos de memória, essa parte da função é passível de possuir uma inversa.
 
-\imagem{Perfil de um PA}{
+\imagemH{Perfil de um PA}{
 \label{fig:perfil_pa}
-\includegraphics[width = 0.8\textwidth]{fig/modelo_pa.png}
+\includegraphics[width = 0.8\textwidth]{fig/modelo_pa.pdf}
 }{O autor}{fig:perfil_pa}{}{Perfil de um PA, com os valores normalizados, mostrando sua região não-linear na região com entradas e saídas com maiores amplitudes.}
 
 Apesar da função inversa do PA não ser única, a presença de elementos de memória que afetam o estado atual se torna uma condição de contorno para determinar o valor correto para a inversa em razão das entradas atuais e passadas. Na modelagem da inversa do PA, por meio da topologia presente neste trabalho, essa informação se torna implícita no modelo de caixa preta utilizado.
@@ -135,10 +137,10 @@ Um pré-distorcedor digital é um sistema pré-inverso, que distorce o sinal ant
         \node[circle, fill,minimum size=1.5mm,inner sep=0pt,outer sep=0pt] at (-3.5,0.5) {};
 \end{tikzpicture}
 }
-}{O autor}{fig:dpd_cascata}{}{Cascata do DPD com o PA.}
+}{O autor}{fig:dpd_cascata}{}{Cascata do DPD com o PA ilustrando as distorções sofridas pelo sinal de entrada, no qual o sinal intermediário é desconhecido.}
 
 
-\imagem{Cascata do PoD com o PA}{
+\imagem{Cascata do PA com o PoD}{
 \resizebox{0.8\textwidth}{!}{
 \label{fig:pod_cascata}
 \begin{tikzpicture}[->,thick]
@@ -152,7 +154,7 @@ Um pré-distorcedor digital é um sistema pré-inverso, que distorce o sinal ant
         \node[circle, fill,minimum size=1.5mm,inner sep=0pt,outer sep=0pt] at (-3.5,-1) {};
 \end{tikzpicture}
 }
-}{O autor}{fig:pod_cascata}{}{Cascata do DPD com o PA.}
+}{O autor}{fig:pod_cascata}{}{Cascata do PA com o PoD ilustrando as distorções sofridas pelo sinal de entrada, no qual o sinal intermediário é a saída conhecida do PA.}
 
 Para os projetos do DPD e PoD, dois conjuntos de entradas e saídas medidas precisam estar disponíveis: um para o treinamento e outro para a validação. O projeto do PoD é uma modelagem computacional clássica na qual todas as informações do PoD são conhecidas. As informações para o PoD são obtidas pela troca de papeis da entrada e da saída do PA. Entretanto, por causa de sua saída desconhecida, projetar um DPD requer uma maior complexidade em relação ao PoD.
 
