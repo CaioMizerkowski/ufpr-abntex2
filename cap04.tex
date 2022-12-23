@@ -26,7 +26,7 @@ A \autoref{fig:pi-exemplo} evidência a estrutura do problema inverso, no qual u
 \end{tikzpicture}
 }
 \label{fig:pi-exemplo}
-}{O autor}{fig:pi-exemplo}{}{Modelo de resolução do problema inverso, possuindo como parâmetros um chute inicial, uma saída esperada e as entradas passadas com o objetivo de encontrar uma entrada que minimize o erro entre a saida esperada e a saída do modelo.}
+}{O autor}{fig:pi-exemplo}{}{Modelo de resolução do problema inverso, possuindo como parâmetros um chute inicial, uma saída esperada e as entradas passadas com o objetivo de encontrar uma entrada que minimize o erro entre a saída esperada e a saída do modelo.}
 
 O problema inverso é utilizado em diversas áreas, em especial na área de computação de imagens, no qual pode ser utilizado para a reconstrução de imagens na área médica \cite{mccann2016fast}, no aumento da resolução de imagens de microscópios \cite{kellman2019data}, entre outros usos \cite{9084378}.
 
@@ -41,5 +41,5 @@ Uma das maneiras de se classificar um problema é se este é bem-posto ou se é 
 Visto que o problema inverso consiste em encontrar as entradas de um modelo conhecendo-se as suas saídas e sabendo-se que o problema inverso é geralmente avaliado para funções não monotônicas, é fácil entender que o problema inverso em geral é um problema mal-posto.
 No caso em específico do PA isto é uma certeza, pois não existe uma solução única para todas as saídas em uma função não monotônica, portanto o problema inverso do PA é mal-posto. Logo, métodos numéricos aplicados na resolução do problema inverso possuem uma possibilidade de convergir para um valor incorreto ou de não conseguirem convergir. O processo utilizado para a modelagem do PA também é responsável por outras dificuldades que tornam mais complexa a análise e o entendimento dos resultados obtidos.
 
-\section{Aplicação do problema inverso para a análise comportamental} \label{sec:pi-app}
+\section{Aplicação prática do problema inverso} \label{sec:pi-app}
 Para se analisar o comportamento do modelo direto do amplificador de potência com a utilização do problema inverso não é necessária nenhuma modificação na estrutura presente na \autoref{fig:pi-exemplo}. No entanto, as entradas passadas, em razão do modelo possuir memória, devem ser passadas como parâmetros adicionais ao modelo.

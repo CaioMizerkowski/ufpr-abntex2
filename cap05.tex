@@ -64,7 +64,7 @@ O modelo foi capaz de ter um NMSE de -60.9 dB para os dados de treinamento e de 
 
 \section{Uso do PI na análise do comportamento} \label{sec:estudoi-pi}
 
-\subsection{Efeitos da continuidade da NN} \label{subsec:estudoi-pi-conti}
+\subsection{Efeitos da continuidade da ANN} \label{subsec:estudoi-pi-conti}
 As redes neurais possuem a capacidade de generalizar o comportamento da função e estender esse comportamento para regiões não mapeadas, causando uma complicação adicional. Pois mesmo para entradas de menor amplitude, uma região descrente e não mapeada pode ser formada, como visto na \autoref{fig:continuidade_pa}. Um contorno a isso é penalizar a otimização na região não mapeada, multiplicando o erro encontrado por um coeficiente proporcional a amplitude de entrada proposto. Causar uma descontinuidade nessa região em testes preliminares se mostrou ineficiente e não foi adotado esse método.
 
 \imagem{Continuidade do modelo}{
@@ -72,7 +72,7 @@ As redes neurais possuem a capacidade de generalizar o comportamento da função
 \includegraphics[width = 0.8\textwidth]{fig/continuidade_pa.pdf}
 }{O autor}{fig:continuidade_pa}{}{Continuidade do modelo do PA com a memória fixada e variando-se a entrada entre 0 e 3, separando-se a região mapeada no treinamento e a região não mapeada no treinamento}
 
-\subsection{Efeito dos valores iniciais na solução do PI e distribuição por amplitudes} \label{subsec:estudoi-pi-efeito}
+\subsection{Efeito dos valores iniciais na solução do PI} \label{subsec:estudoi-pi-efeito}
 Os 18 diferentes valores, presentes na \autoref{tab:valores}, foram definidos como chutes iniciais para o processo de solução do problema inverso. Sendo estes separados, junto aos resultados, em dois conjuntos: o primeiro conjunto com amplitude de 0,5 e segundo conjunto com amplitude de 2,5.
 
 Nas \autoref{fig:erro_05} e \autoref{fig:erro_25} pode-se observar o comportamento destes dois principais conjuntos, no qual vemos a formação de três regiões. A região superior representa os valores que não convergiram, enquanto a inferior é dividida entre os que convergiram para o valor esperado e as que encontraram um valor de entrada não esperado. No gráfico está representado o erro entre o valor de saída e de entrada do modelo por meio do NMSE.
@@ -158,6 +158,3 @@ Os resultados práticos no treinamento da inversa do PA através da mesma topolo
 \label{fig:validacao_inversa}
 \includegraphics[width = 0.8\textwidth]{fig/validacao_inversa.pdf}
 }{O autor}{fig:validacao_inversa}{}{Comparação gráfica entre as saídas conhecidas e as saídas do modelo da inversa do PA para os dados de validação.}
-
-\chapter{Conclusão} \label{cha:conclusao}
-O problema inverso se mostra através dos resultados presentes uma ferramenta promissora para a análise do comportamento de modelos computacionais de PAs e de suas inversas. Existe uma grande região para se aprofundar nestas análises, sendo esse estudo de caso somente uma pequena amostra das possibilidades, que já é capaz de auxiliar a delimitar as regiões mais estáveis em um modelo a partir da aplicação de diferentes amplitudes como parâmetro inicial no processo de resolução do problema inverso.

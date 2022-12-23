@@ -20,9 +20,9 @@ Complementar a isso, a modelagem computacional de sistemas e componentes utiliza
 
 Existindo então como diferencial neste trabalho a utilização do problema inverso (PI) voltado para a análise de modelos computacionais dos amplificadores de potência. Estando esse trabalho dividido em duas partes, ambas em torno de aplicações distintas do problema inverso, o objetivo geral deste trabalho é explorar o uso do problema inverso para compreender e solucionar problemas na modelagem dos amplificadores de potência.
 
-A primeira parte é a aplicação do problema inverso na análise do comportamento dos amplificadores de potência, realizada durante o TCC I, que possui como motivação facilitar o entendimento e o desenvolvimento de modelos computacionais que se comportem de maneira similar aos amplificadores de potência estudados. Pois os amplificadores de potência possuem uma região monotônica e outra região não-monotônica em razão de efeitos de saturação dos componentes físicos, junto a presença de memória em razão principalmente de efeitos térmicos \cite{pedro_comparative_2005}.
+A primeira parte é a aplicação do problema inverso na análise do comportamento dos amplificadores de potência, que possui como motivação facilitar o entendimento e o desenvolvimento de modelos computacionais que se comportem de maneira similar aos amplificadores de potência estudados. Pois os amplificadores de potência possuem uma região monotônica e outra região não-monotônica em razão de efeitos de saturação dos componentes físicos, junto a presença de memória em razão principalmente de efeitos térmicos \cite{pedro_comparative_2005}.
 
-A segunda parte, a ser realizada durante o TCC II, é a aplicação de problema inverso na validação de pré-distorcedores digitais. Sendo os pré-distorcedores digitais responsáveis pela linearização do comportamento dos amplificadores de potência, permitindo que estes sejam utilizados em sua região não-linear que possui maior eficiência energética \cite{kenington_high-linearity_2000}.
+A segunda parte é a aplicação de problema inverso na validação de pré-distorcedores digitais. Sendo os pré-distorcedores digitais responsáveis pela linearização do comportamento dos amplificadores de potência, permitindo que estes sejam utilizados em sua região não-linear que possui maior eficiência energética \cite{kenington_high-linearity_2000}.
 
 \section{Objetivos} \label{sec:introd-obje}
 
@@ -44,6 +44,19 @@ Os objetivos específicos da primeira parte deste trabalho são:
     \item Classificar os resultados em razão da convergência para o valor conhecido, convergência para um valor não conhecido e divergência.
     \item Sumarizar os dados de forma a extrair métricas que facilitem a análise dos resultados do problema inverso.
     \item Analisar os resultados de modo a compreender o comportamento do modelo do PA analisado.
+\end{enumerate}
+
+%%SEGUNDA
+Enquanto na segunda parte deste trabalho os objetivos específicos são:
+
+\begin{enumerate}
+    \item Modelar as inversas/diretas dos PAs utilizando-se dois perceptrons de três camadas (TLPs) através do Matlab.
+    \item Treinar esse modelo através do método Levenberg-Marquardt para se determinar os coeficientes.
+    \item Validar o modelo por meio do erro quadrático médio normalizado (NMSE).
+    \item Construir um conjunto de funções para representar o problema inverso para o modelo.
+    \item Definir um conjunto de valores iniciais para a resolução do problema inverso.
+    \item Encontrar as respostas para o problema inverso através da função ... presente no Matlab.
+    \item ...
 \end{enumerate}
 
 \section{Estrutura do trabalho} \label{sec:introd-estrut}
