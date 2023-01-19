@@ -1,9 +1,9 @@
 \chapter{Problema inverso} \label{cha:pi}
 
 \section{Definindo o problema inverso} \label{sec:pi-def}
-Resolver um problema inverso é em sua essencial descobrir qual a entrada atual para um problema para o qual só se conhece o modelo direto no processo de resolução e as suas saídas, ou seja, não se utiliza um modelo, seja caixa preta ou caixa branca, que reproduza o comportamento inverso do sistema analisado naquele momento \cite{ljung1999system}. É a partir de um processo de otimização das entradas, e não de qualquer coeficiente presente no modelo, se faz a busca da entrada que produza a saída conhecida.
+Resolver um problema inverso é, em sua essência, descobrir qual a entrada atual para um problema para o qual só se conhece o modelo direto no processo de resolução e as suas saída., Desta forma, não se utiliza um modelo, seja caixa preta ou caixa branca, que reproduza o comportamento inverso do sistema analisado naquele momento \cite{ljung1999system}. É a partir de um processo de otimização das entradas, e não dos coeficientes presentes no modelo, que se faz a busca da entrada que produza a saída conhecida.
 
-A \autoref{fig:pi-exemplo} evidência a estrutura do problema inverso, no qual uma entrada inicial é proposta como solução para o algoritmo de otimização. A partir disso, o algoritmo começa a explorar o espaço das entradas, até encontrar uma que reduza o erro entre a saída do modelo e a saída esperada a ponto da condição de busca terminar. Essa condição em geral é uma combinação do número máximo de iterações, do valor do erro e da estabilidade do valor do erro.
+A \autoref{fig:pi-exemplo} evidencia a estrutura do problema inverso, no qual uma entrada inicial é proposta como solução para o algoritmo de otimização. A partir disso, o algoritmo começa a explorar o espaço das entradas, até encontrar uma que reduza o erro entre a saída do modelo e a saída esperada a ponto da condição de busca terminar. Essa condição em geral é uma combinação do número máximo de iterações, do valor do erro e da estabilidade do valor do erro.
 
 \imagem{Modelo de resolução do problema inverso}{
 \resizebox{0.8\textwidth}{!}{
@@ -15,7 +15,7 @@ A \autoref{fig:pi-exemplo} evidência a estrutura do problema inverso, no qual u
 \draw[dashed] (1,1.5) .. controls (1,0) and (1.5,-1) .. (3,-2);
 \draw (-1,-0.5) -- (0.5,-0.5);
 \draw[rounded corners=4pt] (6.5,-0.5) -- (7.5,-0.5) -- (7.5,2) -- (1.5,2);
-\node at (-1,-1) {\small Chute inicial};
+\node at (-1,-1) {\small Valor inicial};
 \node at (3.5,-1) {\small Entrada};
 \node at (4,2.5) {\small Saída modelo};
 \draw  (-1,2) -- (0.5,2);
@@ -26,15 +26,15 @@ A \autoref{fig:pi-exemplo} evidência a estrutura do problema inverso, no qual u
 \end{tikzpicture}
 }
 \label{fig:pi-exemplo}
-}{O autor}{fig:pi-exemplo}{}{Modelo de resolução do problema inverso, possuindo como parâmetros um chute inicial, uma saída esperada e as entradas passadas com o objetivo de encontrar uma entrada que minimize o erro entre a saída esperada e a saída do modelo.}
+}{O autor}{fig:pi-exemplo}{}{Modelo de resolução do problema inverso, possuindo como parâmetros: valor inicial, saída esperada e as entradas passadas. Com o objetivo de encontrar uma entrada que minimize o erro entre a saída esperada e a saída do modelo.}
 
-O problema inverso é utilizado em diversas áreas, em especial na área de computação de imagens, no qual pode ser utilizado para a reconstrução de imagens na área médica \cite{mccann2016fast}, no aumento da resolução de imagens de microscópios \cite{kellman2019data}, entre outros usos \cite{9084378}.
+O problema inverso é utilizado em diversas áreas, em especial na área de computação de imagens, na qual pode ser utilizado para a reconstrução de imagens na área médica \cite{mccann2016fast}, no aumento da resolução de imagens de microscópios \cite{kellman2019data}, entre outros usos \cite{9084378}.
 
 \section{Problemas bem-postos e mal-postos} \label{sec:pi-posto}
 Uma das maneiras de se classificar um problema é se este é bem-posto ou se é mal-posto, sendo problemas bem-postos normalmente estáveis para as soluções numéricas, enquanto problemas mal-postos possuem uma maior complexidade para a sua resolução. Conforme os critérios de Hadamard \cite{hadamard1902problemes}, existem três condições para que um problema seja considerado bem-posto:
 \begin{itemize}
   \item Uma solução exista
-  \item Está solução seja única
+  \item Esta solução seja única
   \item O comportamento desta solução seja contínuo
 \end{itemize}
 

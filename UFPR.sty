@@ -640,7 +640,7 @@
 			\label{fig:#4}
 			
 			%ajustado p/ a largura da imagem
-			\begin{minipage}{\myboxlena} \footnotesize
+			\begin{minipage}{0.8\textwidth} \footnotesize
 				\vspace{2mm}\centering
 				%\begin{flushleft}
 				\par FONTE:~#3
@@ -668,7 +668,34 @@
 			\label{fig:#4}
 			
 			%ajustado p/ a largura da imagem
-			\begin{minipage}{\myboxlena} \footnotesize
+			\begin{minipage}{0.8\textwidth} \footnotesize
+				\vspace{2mm}\centering
+				%\begin{flushleft}
+				\par FONTE:~#3
+				\ifthenelse{\equal{#5}{}}{}
+				{ \par\hangindent=14mm NOTA: #5 }
+				
+				\ifthenelse{\equal{#6}{}}{}
+				{ \par\hangindent=14mm LEGENDA: #6 }
+				%\end{flushleft}
+			\end{minipage}
+		\end{figure}
+	}
+}
+
+\newcommand{\imagemHH}[6]{
+	{
+	\centering\footnotesize
+		\noindent
+  		% \settowidth{\myboxlena}{\usebox{\myboxa}}
+		\begin{figure}[H]
+			\centering
+			\caption{\uppercase{#1}}
+			#2
+			\label{fig:#4}
+			
+			%ajustado p/ a largura da imagem
+			\begin{minipage}{0.8\textwidth} \footnotesize
 				\vspace{2mm}\centering
 				%\begin{flushleft}
 				\par FONTE:~#3
@@ -741,8 +768,8 @@
  
     \label{tab:#4}
  
-     \begin{minipage}{\myboxlen} 
-        \vspace{2mm}\footnotesize
+     \begin{minipage}{0.8\textwidth} 
+        \vspace{2mm}\centering\footnotesize
         %\begin{flushleft}
             FONTE:~ #3
             
@@ -818,3 +845,4 @@
     \label{qua:#4}
   \end{quadro}
   }
+  

@@ -52,7 +52,7 @@
  \providecommand{\terErrata}{Nao}
  \providecommand{\terListaFiguras}{Sim}
  \providecommand{\terListaQuadros}{Nao}
- \providecommand{\terListaTabelas}{Nao}
+ \providecommand{\terListaTabelas}{Sim}
  \providecommand{\terSiglasAbrev}{Nao}
  \providecommand{\terResumos}{Sim}
  \providecommand{\terSumario}{Sim}
@@ -110,28 +110,7 @@
 \newcommand{\imprimircdu}{}
 
 % ----------------------------------------------------------
-\newcommand{\imprimirerrata}{
-Elemento opcional da \cites[4.2.1.2]{NBR14724:2011}. Exemplo:
-
-\vspace{\onelineskip}
-
-FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com
-reimplantação de enxerto ósseo autólogo autoclavado associado ao plasma
-rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em
-cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e
-Zootecnia, Universidade de São Paulo, São Paulo, 2011.
-
-\begin{table}[htb]
-\center
-\footnotesize
-\begin{tabular}{|p{1.4cm}|p{1cm}|p{3cm}|p{3cm}|}
-  \hline
-   \textbf{Folha} & \textbf{Linha}  & \textbf{Onde se lê}  & \textbf{Leia-se}  \\
-    \hline
-    1 & 10 & auto-conclavo & autoconclavo\\
-   \hline
-\end{tabular}
-\end{table}}
+\newcommand{\imprimirerrata}{}
 
 % Comandos de dados - Data da apresentação
 \providecommand{\imprimirdataapresentacaoRotulo}{}
@@ -179,8 +158,8 @@ a ponto de tocar os infernos."\\
 
 % ----------------------------------------------------------
 \newcommand{\ResumoTexto}{%\color{blue}
-Dividido em duas partes, esse trabalho tem por objetivo explorar o problema inverso (PI) e suas aplicações voltadas para a modelagem, a validação e a linearização de amplificadores de potência (PAs), utilizando-se a modelagem computacional através de redes neurais artificiais como método para a reprodução do comportamento destes. Na primeira parte deste trabalho é analisado o problema inverso aplicado aos modelos de PAs, partindo-se do pressuposto de que construção de uma função inversa ao PA possui uma complexidade que pode ser relacionada ao quão não linear é sua curva e foi iniciada a construção de um arcabouço técnico de análises e um estudo de caso destas análises. O parâmetro analisado na primeira parte deste trabalho foi a distribuição dos resultados da resolução do problema inverso para o modelo direto do PA entre três categorias que surgiram naturalmente durante as análises exploratórias: convergência para o valor esperado, convergência para um valor não esperado e não-convergência. A segunda parte deste trabalho terá como foco o uso do problema inverso para a validação da pré-inversa de modelos de PAs, visto que o treinamento em cascata só garante a validação da pós-inversa do modelo e se torna necessário uma validação física desta em seu papel como pré-inversa.
-} 
+Dividido em duas partes, esse trabalho teve por objetivo explorar o problema inverso (PI) e suas aplicações voltadas para a modelagem, a validação e a linearização de amplificadores de potência (PAs), utilizando-se a modelagem computacional através de redes neurais artificiais como método para a reprodução do comportamento destes. Na primeira parte deste trabalho é analisado o problema inverso aplicado aos modelos de PAs, partindo-se do pressuposto de que construção de uma função inversa ao PA possui uma complexidade que pode ser relacionada ao quão não linear é sua é sua curva, sendo iniciada a construção de um arcabouço técnico de análises e um estudo de caso destas análises. O parâmetro analisado na primeira parte deste trabalho foi a distribuição dos resultados da resolução do problema inverso para o modelo direto do PA entre três categorias que surgiram naturalmente durante as análises exploratórias: convergência para o valor esperado, convergência para um valor não esperado e não-convergência. A segunda parte deste trabalho teve como foco o uso do problema inverso para a validação da pré-inversa de modelos de PAs sem o uso de novas medições, visto que o treinamento em cascata só garante a validação da pós-inversa do modelo e se torna necessário uma validação física desta em seu papel como pré-inversa.
+}
 
 \newcommand{\PalavraschaveTexto}{%\color{blue}
 Problema inverso. Modelagem computacional. Rede neural artificial. Amplificador de potência. Linearização.}
@@ -218,13 +197,13 @@ Problema inverso. Modelagem computacional. Rede neural artificial. Amplificador 
 
 % ----------------------------------------------------------
 \newcommand{\AgradecimentosTexto}{%\color{blue}
-Agradeço antes de tudo a minha família, em especial ao meu tio Reinaldo e a sua esposa Simone, que me apoiaram deste do começo dessa jornada de formas incomensuráveis.
+Agradeço antes de tudo a minha família, em especial ao meu tio Reinaldo e a sua esposa Simone, que me apoiaram desde o começo dessa jornada de formas incomensuráveis.
 
 Ao meu orientador, o Prof. Dr. Eduardo Gonçalves de Lima, que me orientou durante três anos de iniciação científica, na minha jornada dentro do curso de engenharia elétrica e que continua a me orientar no desenvolvimento deste trabalho.
 
 Aos meus amigos e colegas de faculdade, pelo tempo compartilhado e apoio nas mais diversas atividades.
 
-Aos professores que tive a sorte de compartilhar o espaço dentro da universidade e que muito me ensinaram durante a minha passagem por esse curso.
+Aos professores com quem tive a sorte de compartilhar o espaço dentro da universidade e que muito me ensinaram durante a minha passagem por esse curso.
 
 Ao GICS pelas oportunidades de pesquisa na iniciação científica cujo resultado final é esse trabalho de conclusão de curso.
 

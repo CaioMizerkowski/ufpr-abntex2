@@ -14,49 +14,46 @@ Neste capítulo serão expostas as motivações, os objetivos e a estrutura do t
 \criarsigla{MSE}{Erro quadrático médio}\label{item:MSE}
 
 \section{Motivação} \label{sec:introd-motiv}
-Os amplificadores de potência (PAs) são parte importante de qualquer aplicação de transmissão de sinais através do ar, essenciais para o funcionamento do mundo moderno, mas são também responsáveis por grande parte do consumo de energia destas aplicações \cite{raychaudhuri_frontiers_2012}. Melhorias na análise de seu comportamento, assim como nas técnicas que permitam a sua maior eficiência, são parte importante do desenvolvimento tecnológico em um mundo em que a comunicação sem fio é predominante nas atividades do diárias. Tanto no uso de redes Wi-Fi, como no uso das tecnologias de transmissão de dados 4G e 5G, o seu papel é essencial \cite{9676485}, portanto, trabalhos envolvendo os amplificadores de potência são relevantes de uma perspectiva prática e acadêmica.
+Os amplificadores de potência (PAs) são parte importante de qualquer aplicação de transmissão de sinais através do ar, essenciais para o funcionamento do mundo moderno, mas são também responsáveis por grande parte do consumo de energia destas aplicações \cite{raychaudhuri_frontiers_2012}. Melhorias na análise de seu comportamento, assim como nas técnicas que permitam a sua maior eficiência, são parte importante do desenvolvimento tecnológico em um mundo em que a comunicação sem fio é predominante nas atividades diárias. Tanto no uso de redes Wi-Fi, como no uso das tecnologias de transmissão de dados 4G e 5G, o seu papel é essencial \cite{9676485}. Portanto, trabalhos envolvendo os amplificadores de potência são relevantes de uma perspectiva prática e acadêmica.
 
-Complementar a isso, a modelagem computacional de sistemas e componentes utilizando-se modelos matemáticos do tipo caixa preta é um tópico que está presente no desenvolvimento de soluções em todas as áreas da engenharia, inclusive na área de simulações de amplificadores de potência \cite{pedro_comparative_2005}. Ocorrendo um aumento nas últimas décadas em torno dos tópicos de inteligência artificial e aprendizagem de máquina \cite{Zhao2021}, as redes neurais artificiais são amplamente utilizadas na indústria e na academia e possuem um ecossistema vibrante de tecnologias em ativo desenvolvimento em diversas linguagens de programação. Tornando extremamente natural o desenvolvimento de modelos computacionais de amplificadores de potência para serem analisados através de simulações em primeira análise, ao invés de partir imediatamente para o mais lento e complicado processo de medições em sistemas físicos.
+Complementarmente, a modelagem computacional de sistemas e componentes utilizando modelos matemáticos do tipo caixa preta é um tópico que está presente no desenvolvimento de soluções em todas as áreas da engenharia, inclusive na área de simulações de amplificadores de potência \cite{pedro_comparative_2005}. O interesse em torno dos tópicos de inteligência artificial e aprendizagem de máquina vem sendo cada vez maior nas últimas décadas \cite{Zhao2021}, as redes neurais artificiais são amplamente utilizadas na indústria e na academia e possuem um ecossistema vibrante de tecnologias em ativo desenvolvimento em diversas linguagens de programação. Tornou-se extremamente natural o desenvolvimento de modelos computacionais de amplificadores de potência para serem analisados através de simulações em primeira análise, ao invés de partir imediatamente para o mais lento e complicado processo de medições em sistemas físicos.
 
-Existindo então como diferencial neste trabalho a utilização do problema inverso (PI) voltado para a análise de modelos computacionais dos amplificadores de potência. Estando esse trabalho dividido em duas partes, ambas em torno de aplicações distintas do problema inverso, o objetivo geral deste trabalho é explorar o uso do problema inverso para compreender e solucionar problemas na modelagem dos amplificadores de potência.
+Existindo então como diferencial neste trabalho a utilização do problema inverso (PI) voltado para a análise de modelos computacionais dos amplificadores de potência. O trabalho está dividido em duas partes, ambas em torno de aplicações distintas do problema inverso, o objetivo geral deste trabalho foi explorar o uso do problema inverso para compreender e solucionar problemas na modelagem dos amplificadores de potência.
 
-A primeira parte é a aplicação do problema inverso na análise do comportamento dos amplificadores de potência, que possui como motivação facilitar o entendimento e o desenvolvimento de modelos computacionais que se comportem de maneira similar aos amplificadores de potência estudados. Pois os amplificadores de potência possuem uma região monotônica e outra região não-monotônica em razão de efeitos de saturação dos componentes físicos, junto a presença de memória em razão principalmente de efeitos térmicos \cite{pedro_comparative_2005}.
+A primeira parte consistiu na aplicação do problema inverso na análise do comportamento dos amplificadores de potência, que possui como motivação facilitar o entendimento e o desenvolvimento de modelos computacionais que se comportem de maneira similar aos amplificadores de potência estudados. Isso porque os amplificadores de potência possuem uma região monotônica e outra região não-monotônica em razão de efeitos de saturação dos componentes físicos, juntamente com a presença de memória em razão principalmente de efeitos térmicos \cite{pedro_comparative_2005}.
 
-A segunda parte é a aplicação de problema inverso na validação de pré-distorcedores digitais. Sendo os pré-distorcedores digitais responsáveis pela linearização do comportamento dos amplificadores de potência, permitindo que estes sejam utilizados em sua região não-linear que possui maior eficiência energética \cite{kenington_high-linearity_2000}.
+A segunda parte é a aplicação de problema inverso na validação de pré-distorcedores digitais. Os pré-distorcedores digitais são os responsáveis pela linearização do comportamento dos amplificadores de potência, permitindo que estes sejam utilizados em sua região não-linear que possui maior eficiência energética \cite{kenington_high-linearity_2000}.
 
 \section{Objetivos} \label{sec:introd-obje}
 
 \subsection{Objetivo geral} \label{ssec:introd-obje-geral}
-A primeira parte deste trabalho possui como objetivo explorar os resultados que o uso do problema inverso produz ao ser usado para encontrar as entradas atuais do modelo de amplificador de potência analisado e classificar estes resultados em grupos distintos, separando os resultados convergentes para o valor esperado, convergentes para um valor não esperado e não convergentes.
+A primeira parte deste trabalho teve como objetivo explorar os resultados produzidos no uso do problema inverso para identificação das entradas atuais do modelo de amplificador de potencia analisado. Além disso, objetivou-se classificar estes resultados em grupos distintos, separando-os entre convergentes para o valor esperado, convergentes para um valor não esperado e não convergentes.
 
-A segunda parte visa oferecer um método para a validação da inversa do amplificador de potência em seu papel de pré-distorcedor digital sem necessitar de medidas físicas do modelo, utilizando-se somente os dados já anteriormente coletados, o modelo de inversa, o modelo de pré-distorcedor digital e o problema inverso.
+Na segunda parte, o objetivo foi oferecer um método de validação da inversa do amplificador de potencia em seu papel de pré-distorcedor digital, sem necessitar de medidas físicas do modelo. Para isso, utilizou-se somente os dados anteriormente coletados, os modelos de inversa e pre-distorcedor digital, e o problema inverso.
 
 \subsection{Objetivo específico} \label{ssec:introd-obje-espec}
-Os objetivos específicos da primeira parte deste trabalho são:
+Os objetivos específicos da primeira parte deste trabalho foram:
 
 \begin{enumerate}
-    \item Modelar um PA utilizando-se dois perceptrons de três camadas (TLPs) construídos com o uso das bibliotecas TensorFlow e Keras.
+    \item Modelar um PA utilizando-se dois perceptrons de três camadas (TLPs) construídos com o uso das bibliotecas \textit{TensorFlow} e \textit{Keras}.
     \item Treinar esse modelo através do método Levenberg-Marquardt para se determinar os coeficientes.
     \item Validar o modelo por meio do erro quadrático médio normalizado (NMSE).
     \item Construir um conjunto de funções para representar o problema inverso para o modelo.
     \item Definir um conjunto de valores iniciais para a resolução do problema inverso.
-    \item Encontrar as respostas para o problema inverso através da função root presente na biblioteca SciPy.
+    \item Encontrar as respostas para o problema inverso através da função \textit{root} presente na biblioteca \textit{SciPy}.
     \item Classificar os resultados em razão da convergência para o valor conhecido, convergência para um valor não conhecido e divergência.
     \item Sumarizar os dados de forma a extrair métricas que facilitem a análise dos resultados do problema inverso.
     \item Analisar os resultados de modo a compreender o comportamento do modelo do PA analisado.
 \end{enumerate}
 
-%%SEGUNDA
-Enquanto na segunda parte deste trabalho os objetivos específicos são:
+Enquanto na segunda parte deste trabalho os objetivos específicos foram:
 
 \begin{enumerate}
-    \item Modelar as inversas/diretas dos PAs utilizando-se dois perceptrons de três camadas (TLPs) através do Matlab.
-    \item Treinar esse modelo através do método Levenberg-Marquardt para se determinar os coeficientes.
-    \item Validar o modelo por meio do erro quadrático médio normalizado (NMSE).
-    \item Construir um conjunto de funções para representar o problema inverso para o modelo.
-    \item Definir um conjunto de valores iniciais para a resolução do problema inverso.
-    \item Encontrar as respostas para o problema inverso através da função ... presente no Matlab.
-    \item ...
+    \item Modelar o PA e sua pós-inversa utilizando-se dois TLPs através do Matlab.
+    \item Treinar através do método Levenberg-Marquardt e validar os modelos.
+    \item Posicionar a pós-inversa como pré-inversa na cascata com o modelo de PA.
+    \item Construir um conjunto de funções para representar o problema inverso de encontrar as entradas da inversa do DPD.
+    \item Comparar o erro entre as soluções encontradas e as saídas medidas do PA, de forma a validar o DPD.
 \end{enumerate}
 
 \section{Estrutura do trabalho} \label{sec:introd-estrut}
@@ -66,10 +63,10 @@ O segundo, de modo a garantir as bases para a compreensão deste trabalho, apres
 
 O terceiro é focado exclusivamente na modelagem com redes neurais, cobrindo os conceitos básicos, treinamento e validação e a topologia utilizada nas duas partes deste trabalho.
 
-O quarto introduz o problema inverso de forma mais rigorosa, assim como as bases matemáticas para a sua compreensão e apresentando a metodologia para a sua aplicação nos dois estudos de casos presentes neste trabalho.
+O quarto introduz o problema inverso de forma mais rigorosa, assim como as bases matemáticas para a sua compreensão, apresentando a metodologia para a sua aplicação nos dois estudos de casos presentes neste trabalho.
 
-O primeiro estudo de caso, parte I deste trabalho, é apresentado no quinto capítulo. Os tópicos dentro deste capítulo cobrem as informações sobre o amplificador de potência analisado, quais as ferramentas e qual a metodologia utilizada para a extração dos resultados, o processo de modelagem e de validação, os resultados obtidos através do uso do problema inverso na análise e a conclusão parcial.
+O primeiro estudo de caso, parte I deste trabalho, é apresentado no quinto capítulo. Os tópicos dentro deste capítulo cobrem as informações sobre o amplificador de potência analisado, quais as ferramentas, tecnologias e metodologia utilizadas para a extração dos resultados, os processos de modelagem e de validação, os resultados obtidos através do uso do problema inverso na análise e a conclusão parcial.
 
 O segundo estudo de caso, parte II deste trabalho, é apresentado no sexto capítulo. Similar em estrutura ao quinto capítulo, os resultados obtidos são o do uso do problema inverso na validação do pré-distorcedor digital.
 
-O último capítulo apresenta a conclusão do trabalho e apresenta possíveis continuações no estudo dos tópicos presentes neste trabalho.
+O último capítulo apresenta a conclusão do trabalho.
