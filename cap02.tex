@@ -25,7 +25,7 @@ A \autoref{fig:model-pa-p} mostra um modelo do amplificador de potência com as 
 \label{fig:model-pa-p}
 }{O autor}{fig:model-pa-p}{}{Modelo de PA com as potências de entrada $P_{in}$, de saída $P_{out}$, de alimentação $P_{dc}$ e a perda $P_{d}$ indicadas.}
 
-A eficiência \criarsimbolo{$\eta$}{Eficiência}\label{item:efi} pode ser caracterizada como a razão entre a potência de alimentação e a potência de saída, conforme a equação \ref{eq:resultado}, e num caso ideal seria máxima na região de maior potência de saída. No entanto, a região com a máxima potência de saída é justamente a região de funcionamento não-linear do amplificador de potência e são necessárias técnicas para compensar essa não linearidade presente.
+A eficiência \criarsimbolo{$\eta$}{Eficiência}\label{item:efi} pode ser caracterizada como a razão entre a potência de saída e a potência de alimentação, conforme a equação \ref{eq:resultado}, e num caso ideal seria máxima na região de maior potência de saída. No entanto, a região com a máxima potência de saída é justamente a região de funcionamento não-linear do amplificador de potência e são necessárias técnicas para compensar essa não linearidade presente.
 
 \begin{align}
 \eta = \frac{P_{out}}P_{dc}
@@ -54,7 +54,7 @@ A linearização é o processo necessário para compensar as não linearidades p
 A construção da função inversa do PA através de técnicas de caixa preta, por possuir um perfil inverso ao mesmo, possui uma complexidade, tanto no processo de treinamento como na quantidade de coeficientes do modelo, que pode ser relacionada ao quão não-linear é a curva do PA estudado. Isso se traduz em um maior esforço nas etapas de modelagem e de treinamento dos modelos inversos para se obter resultados com igual grau de confiança.
 
 \section{Bijetividade e função inversa} \label{sec:fundteo-bije}
-Para se compreender o quão não-linear é uma modelo de PA, utiliza-se o conceito de bijetividade e da separação do modelo em suas regiões monotônica e não-monotônica.
+Para se compreender o quão não-linear é um modelo de PA, utiliza-se o conceito de bijetividade e da separação do modelo em suas regiões monotônica e não-monotônica.
 
 A bijetividade é uma característica necessária para a existência de uma inversa única, seja esta analítica ou numérica \cite{weisstein}. Sabe-se que a existência de uma função inversa $f^{-1}$, conforme exemplificado na equação \ref{eq:equacao_generica} e na \autoref{fig:fun_generica}, necessita que para cada elemento do contradomínio de $f$ exista um e somente um elemento no domínio de $f$.
 
@@ -109,7 +109,7 @@ Essa relação pode ser facilmente observada através da \autoref{fig:bijetivida
 }
 }{O autor}{fig:bijetividade}{}{Função bijetiva $f(x)$, sua inversa $f^{-1}(x)$ e a composição $f^{-1}(f(x))$ representadas através da relação entre conjuntos.}
 
-A função do PA, portanto, desta perspectiva, não é bijetiva, pois apresenta uma região não-monotônica na qual para diferentes elementos no contradomínio existem dois ou mais elementos no domínio desta, o que pode ser visto na \autoref{fig:perfil_pa}. Nesta figura também é possível observar que a maior parte do modelo do PA é monotônico e crescente, ou seja, desconsiderando-se os efeitos de memória, essa parte da função é passível de possuir uma inversa.
+A função do PA, portanto, desta perspectiva, não é bijetiva, pois apresenta uma região não-monotônica na qual para diferentes elementos no contradomínio existem dois ou mais elementos no domínio desta, o que pode ser visto na \autoref{fig:perfil_pa}. Nesta figura também é possível observar que a maior parte do modelo do PA é monotônica e crescente, ou seja, desconsiderando-se os efeitos de memória, essa parte da função é passível de possuir uma inversa.
 
 \imagemH{Perfil de um PA}{
 \label{fig:perfil_pa}
@@ -155,7 +155,7 @@ Um pré-distorcedor digital é um sistema pré-inverso, que distorce o sinal ant
 }
 }{O autor}{fig:pod_cascata}{}{Cascata PA-PoD ilustrando as distorções sofridas pelo sinal de entrada, no qual o sinal intermediário é a saída conhecida do PA.}
 
-Para os projetos do DPD e PoD, dois conjuntos de entradas e saídas medidas precisam estar disponíveis: um para o treinamento e outro para a validação. O projeto do PoD é uma modelagem computacional clássica, na qual todas as informações do PoD são conhecidas. As informações para o PoD são obtidas pela troca de papeis da entrada e da saída do PA. Entretanto, por causa de sua saída desconhecida, projetar um DPD requer uma maior complexidade em relação ao PoD.
+Para os projetos do DPD e PoD, dois conjuntos de entradas e saídas medidas precisam estar disponíveis: um para o treinamento e outro para a validação. O projeto do PoD é uma modelagem computacional clássica, na qual todas as informações do PoD são conhecidas. As informações para o PoD são obtidas pela troca de papéis da entrada e da saída do PA. Entretanto, por causa de sua saída desconhecida, projetar um DPD requer uma maior complexidade em relação ao PoD.
 
 No que concerne ao treinamento do DPD, para contornar o treinamento direto mais pesado do DPD, uma arquitetura para aprendizado indireto (ILA) é usualmente adotada. Na ILA, os parâmetros do modelo de PoD são primeiro identificados considerando-se um cenário mais clássico, no qual ambos os sinais de entrada e saída são conhecidos, e então os parâmetros são copiados para um modelo de DPD com a mesma topologia \cite{changsoo_eun_new_1997}.
 

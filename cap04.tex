@@ -1,7 +1,7 @@
 \chapter{Problema inverso} \label{cha:pi}
 
 \section{Definindo o problema inverso} \label{sec:pi-def}
-Resolver um problema inverso é, em sua essência, descobrir qual a entrada atual para um problema para o qual só se conhece o modelo direto no processo de resolução e as suas saída., Desta forma, não se utiliza um modelo, seja caixa preta ou caixa branca, que reproduza o comportamento inverso do sistema analisado naquele momento \cite{ljung1999system}. É a partir de um processo de otimização das entradas, e não dos coeficientes presentes no modelo, que se faz a busca da entrada que produza a saída conhecida.
+Resolver um problema inverso é, em sua essência, descobrir qual a entrada atual para um problema para o qual só se conhece o modelo direto no processo de resolução e as suas saída. Desta forma, não se utiliza um modelo, seja caixa preta ou caixa branca, que reproduza o comportamento inverso do sistema analisado naquele momento \cite{ljung1999system}. É a partir de um processo de otimização das entradas, e não dos coeficientes presentes no modelo, que se faz a busca da entrada que produza a saída conhecida.
 
 A \autoref{fig:pi-exemplo} evidencia a estrutura do problema inverso, no qual uma entrada inicial é proposta como solução para o algoritmo de otimização. A partir disso, o algoritmo começa a explorar o espaço das entradas, até encontrar uma que reduza o erro entre a saída do modelo e a saída esperada a ponto da condição de busca terminar. Essa condição em geral é uma combinação do número máximo de iterações, do valor do erro e da estabilidade do valor do erro.
 

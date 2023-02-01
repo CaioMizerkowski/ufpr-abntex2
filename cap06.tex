@@ -50,7 +50,7 @@ Na técnica tradicional de validação um sinal de entrada conhecido é processa
 \label{implicit_01}
 \end{equation}
 
-Na técnica proposta de validação o sinal de entrada do DPD é desconhecido e precisa ser encontrado, enquanto todos os outros sinais na cascata são conhecidos. O DPD é validado quando ao se analisar o erro entre o sinal de entrada encontrado pela resolução do problema inverso e o sinal conhecido da saída da cascata. Em tal problema inverso, a incógnita é a amostra de entrada instantânea do DPD $in_{DPD}(n)$, que só pode ser escrita como uma função das amostras de saída instantâneas do DPD e das amostras de entradas passadas na sua forma implícita, de acordo com:
+Na técnica proposta de validação o sinal de entrada do DPD é desconhecido e precisa ser encontrado, enquanto todos os outros sinais na cascata são conhecidos. O DPD é validado analisando o erro entre o sinal de entrada encontrado pela resolução do problema inverso e o sinal conhecido da saída da cascata. Em tal problema inverso, a incógnita é a amostra de entrada instantânea do DPD $in_{DPD}(n)$, que só pode ser escrita como uma função das amostras de saída instantâneas do DPD e das amostras de entradas passadas na sua forma implícita, de acordo com:
 \begin{equation}
 \small g[in_{DPD}(n),\ldots, in_{DPD}(n-M), out_{DPD}(n)]=0.
 \label{implicit_02}
@@ -73,7 +73,7 @@ Na \autoref{tab:sinais_med1} são apresentadas a frequência central ($f_{c}$) d
 \label{tab:sinais_med1}
 }{O autor}{tab:sinais_med1}{}{Informações da frequência central, largura de banda e tamanho da faixa adjacente a frequência central para os quatro PAs analisados.}
 
-A \autoref{tab:sinais_med2}, relativa a medição e obtenção do sinal, aponta a frequência de amostragem ($f_{s}$) utilizada, o número de amostras para o conjunto de dados de treinamento e o número de amostras para o conjunto de dados da validação.
+A \autoref{tab:sinais_med2} relativa a medição e obtenção do sinal, aponta a frequência de amostragem ($f_{s}$) utilizada, o número de amostras para o conjunto de dados de treinamento e o número de amostras para o conjunto de dados da validação.
 \tabela{Informações da amostragem dos PAs}{
 \begin{tabular}{c|c|c|c}
     \hline

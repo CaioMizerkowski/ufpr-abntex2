@@ -1,13 +1,13 @@
 \chapter{Estudo de caso - Parte I} \label{cha:estudoi}
 \section{PA analisado} \label{sec:estudoi-pa}
-Neste estudo de caso foram utilizados os dados extraídos de um modelo Advanced Memory Polynomial (AMP) com um sinal LTE com 153,6 MHz. O AMP foi treinado para representar o esquemático de um PA multímodo proposto para a tecnologia CMOS 130 nm, operando no sexto modo e possuindo uma frequência central de 2,4 GHz largura de banda de 20 MHz, com a frequência de amostragem de 153,6 MHz \cite{dos2017fully} \cite{schuartz2019reduced}. Para os dados de treinamento foram utilizadas 3000 amostras, enquanto 2000 amostras foram utilizadas nas etapas de validação.
+Neste estudo de caso foram utilizados os dados extraídos de um modelo Advanced Memory Polynomial (AMP) com um sinal LTE com 153,6 MHz. O AMP foi treinado para representar o esquemático de um PA multímodo proposto para a tecnologia CMOS 130 nm, operando no sexto modo e possuindo uma frequência central de 2,4 GHz, largura de banda de 20 MHz, com a frequência de amostragem de 153,6 MHz \cite{dos2017fully} \cite{schuartz2019reduced}. Para os dados de treinamento foram utilizadas 3000 amostras, enquanto 2000 amostras foram utilizadas nas etapas de validação.
 
 \section{Ferramentas} \label{sec:estudoi-ferr}
 Diversas ferramentas existem para o desenvolvimento de modelos computacionais, neste estudo de caso foi escolhida como ferramenta principal a linguagem de programação Python. Python é uma linguagem de programação multiparadigma e com alto nível de abstração, que permite a utilização de bibliotecas construídas em linguagens de programação mais eficientes na utilização dos recursos computacionais como C/C++, Fortran e Rust \cite{Ramalho2022-zg}.
 
 Para a construção dos TLPs, foi utilizada a biblioteca TensorFlow, com o auxílio da biblioteca Keras para a construção dos modelos através de sua API funcional. Desenvolvida pelo Google utilizando-se C++, o TensorFlow é uma biblioteca para a criação e o treinamento de projetos de aprendizagem de máquina, com foco em redes neurais artificiais \cite{tensorflow2015-whitepaper}.
 
-Para a representação dos valores, foi utilizada a biblioteca Numpy, construída utilizando-se C. Trata-se de uma biblioteca voltada para a computação cientifica através do uso de matrizes de valores numéricos \cite{harris2020array}.
+Para a representação dos valores, foi utilizada a biblioteca Numpy, construída utilizando-se C. Trata-se de uma biblioteca voltada para a computação científica através do uso de matrizes de valores numéricos \cite{harris2020array}.
 
 Para a resolução dos problemas de otimização de forma a encontrar as soluções do problema inverso, a biblioteca utilizada foi a Scipy, construída utilizando-se principalmente Python, Fortran e C \cite{2020SciPy-NMeth}.
 
@@ -20,7 +20,7 @@ Para o treinamento do modelo, o método de otimização utilizado foi o Levenber
 
 Uma função representando o problema inverso foi criada de tal forma que, se o seu resultado foi zero, o processo de resolução do problema inverso seja exitoso. Essa função é responsável por receber o valor esperado para a saída do modelo e o valor proposto pelo método de resolução como entrada atual do modelo. A partir do valor proposto, ao ser passado ao modelo junto com as entradas passadas conhecidas, é encontrada a saída do modelo. A função retorna a diferença entre a saída obtida do modelo e a saída esperada multiplicada por um fator gama. Esse fator gama é igual a 1 caso a entrada proposta possua amplitude menor que 3 e é igual a amplitude da entrada proposta caso contrário.
 
-Dois conjuntos de 9 entradas propostas foram criados, sendo a diferença entre eles a amplitude, o primeiro conjunto possuindo 0,5 como amplitude e o segundo 2,5. Enquanto as 9 fases escolhidas foram distribuídas de uniformemente ao redor do círculo unitário, iniciando-se em 0. Valores na \autoref{tab:valores}.
+Dois conjuntos de 9 entradas propostas foram criados, sendo a diferença entre eles a amplitude, o primeiro conjunto possuindo 0,5 como amplitude e o segundo 2,5. Enquanto as 9 fases escolhidas foram distribuídas uniformemente ao redor do círculo unitário, iniciando-se em 0, conforme valores na \autoref{tab:valores}.
 \tabela{valores iniciais utilizados}
 {
 \begin{tabular}{l|l|l}
@@ -55,7 +55,7 @@ Para o modelo de PA utilizado nesse estudo de caso, foi definida uma profundidad
 
 A função de ativação foi a tangente hiperbólica, o total de entradas foi igual a 10, na camada de saída foi utilizada uma função de ativação linear, para a busca dos coeficientes foi utilizada a métrica MSE e o processo de busca usou o algoritmo Levenberg-Marquardt. O treinamento das partes real e imaginária foi realizado separadamente.
 
-O modelo foi capaz de ter um NMSE de -60.9 dB para os dados de treinamento e de -42.9 dB para os dados de validação. A \autoref{fig:extracao_pa} apresenta os valores da amplitude da saída em relação à entrada para os dados medidos e para os gerados pelo modelo para o conjunto de treinamento, enquanto a \autoref{fig:validacao_pa} mostra as mesmas informações para o conjunto de validação.
+O modelo foi capaz de ter um NMSE de -60,9 dB para os dados de treinamento e de -42,9 dB para os dados de validação. A \autoref{fig:extracao_pa} apresenta os valores da amplitude da saída em relação à entrada para os dados medidos e para os gerados pelo modelo para o conjunto de treinamento, enquanto a \autoref{fig:validacao_pa} mostra as mesmas informações para o conjunto de validação.
 
 \imagem{Resultado da validação do modelo de PA}{
 \label{fig:validacao_pa}
@@ -65,7 +65,7 @@ O modelo foi capaz de ter um NMSE de -60.9 dB para os dados de treinamento e de 
 \section{Uso do PI na análise do comportamento} \label{sec:estudoi-pi}
 
 \subsection{Efeitos da continuidade da ANN} \label{subsec:estudoi-pi-conti}
-As redes neurais possuem a capacidade de generalizar o comportamento da função e estender esse comportamento para regiões não mapeadas. Isso causa uma complicação a mais, pois, mesmo para entradas de menor amplitude, uma região descrente e não mapeada pode ser formada, como visto na \autoref{fig:continuidade_pa}. Uma forma de mitigar este problema é penalizar a otimização na região não mapeada, multiplicando o erro encontrado por um coeficiente proporcional a amplitude de entrada proposto. O método de causar uma descontinuidade na região se mostrou ineficiente em testes preliminares e, portanto, não foi utilizado.
+As redes neurais possuem a capacidade de generalizar o comportamento da função e estender esse comportamento para regiões não mapeadas. Isso causa uma complicação a mais, pois, mesmo para entradas de menor amplitude, uma região decresente e não mapeada pode ser formada, como visto na \autoref{fig:continuidade_pa}. Uma forma de mitigar este problema é penalizar a otimização na região não mapeada, multiplicando o erro encontrado por um coeficiente proporcional a amplitude de entrada proposto. O método de causar uma descontinuidade na região se mostrou ineficiente em testes preliminares e, portanto, não foi utilizado.
 
 \imagem{Continuidade do modelo}{
 \label{fig:continuidade_pa}
@@ -75,7 +75,7 @@ As redes neurais possuem a capacidade de generalizar o comportamento da função
 \subsection{Efeito da amplitude dos valores iniciais no PI} \label{subsec:estudoi-pi-efeito}
 Os 18 diferentes valores presentes na \autoref{tab:valores} foram definidos como valores iniciais para o processo de solução do problema inverso. Estes foram separados, juntamente aos resultados, em dois conjuntos: o primeiro conjunto com amplitude de 0,5 e segundo conjunto com amplitude de 2,5.
 
-Nas \autoref{fig:erro_05} e \autoref{fig:erro_25} pode-se observar o comportamento destes dois principais conjuntos, no qual vemos a formação de três regiões. A região superior representa os valores que não convergiram, enquanto a inferior é dividida entre os que convergiram para os valor esperado e as que encontraram um valor de entrada não esperado. No gráfico está representado o erro entre os valores de saída e de entrada do modelo por meio do NMSE em dB.
+Nas \autoref{fig:erro_05} e \autoref{fig:erro_25} pode-se observar o comportamento destes dois principais conjuntos, no qual vemos a formação de três regiões. A região superior representa os valores que não convergiram, enquanto a inferior é dividida entre os que convergiram para o valor esperado e as que encontraram um valor de entrada não esperado. No gráfico está representado o erro entre os valores de saída e de entrada do modelo por meio do NMSE em dB.
 
 \imagemH{Erros do PI para o valor inicial de 0,5}{
 \label{fig:erro_05}
